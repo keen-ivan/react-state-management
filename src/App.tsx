@@ -1,11 +1,14 @@
 import { Navbar } from "./components/Navbar";
-import { ThemeProvider } from "./context/ThemeContext";
+import { useTheme } from "./context/ThemeContext";
+import "./App.css";
 
 function App() {
+  const { theme } = useTheme();
+
   return (
-    <ThemeProvider>
+    <div className={`app ${theme}`}>
       <Navbar />
-    </ThemeProvider>
+    </div>
   );
 }
 
